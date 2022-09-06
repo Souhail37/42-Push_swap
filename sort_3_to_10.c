@@ -6,7 +6,7 @@
 /*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:14:42 by sismaili          #+#    #+#             */
-/*   Updated: 2022/04/25 16:55:25 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/09/03 15:28:00 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	sort_less_10_1(t_list *var, int ac)
 void	sort_less_10_2(t_list *var, int ac)
 {
 	int	i;
-	int	max;
 
 	i = 0;
 	if (var->st_a_len == 3)
@@ -94,15 +93,7 @@ void	sort_less_10_2(t_list *var, int ac)
 		while (!ft_is_sorted(var->stack_a, var->st_a_len))
 			sort_3_a(*var);
 		while (var->st_b_len)
-		{
-			max = ft_max(var->stack_b, var->st_b_len, &i);
-			if (var->stack_b[0].value == max)
-				push_a(var, ac);
-			else if (var->stack_b[i].value != max)
-				i++;
-			else if (var->stack_b[i].value == max)
-				to_top_b(var, max, i, ac);
-		}
+			push_a(var, ac);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 13:07:52 by sismaili          #+#    #+#             */
-/*   Updated: 2022/04/27 15:55:33 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/09/03 15:46:15 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int ac, char **av)
 
 	if (ac > 1)
 	{
+		var.i = 0;
+		var.j = 0;
 		if (validarg(av + 1))
 			return (1);
 		ft_joinargs(&var.str, av);

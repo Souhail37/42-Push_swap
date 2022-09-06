@@ -6,7 +6,7 @@
 /*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:59:16 by sismaili          #+#    #+#             */
-/*   Updated: 2022/04/27 23:29:30 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:27:26 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,25 @@ int	ft_max(t_stack *var, int size, int *pos)
 		i++;
 	}
 	return (max);
+}
+
+int	ft_second_max(t_stack *var, int size, int *pos, int max)
+{
+	int	i;
+	int	second_max;
+
+	i = 0;
+	second_max = var[i].value;
+	while (i < size)
+	{
+		if (second_max < var[i].value && var[i].value != max)
+		{
+			second_max = var[i].value;
+			*pos = i;
+		}
+		i++;
+	}
+	return (second_max);
 }
 
 void	ft_done(t_list var, char **spl, int j)
